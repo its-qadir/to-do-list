@@ -9,29 +9,33 @@
 <body ng-controller="ListController">
         
         
-        <div class="p-3 mb-2 bg-success text-white">
-        <h2>To Do List App</h2>
-        </div>
+        <div class="container mx-auto p-3 mb-2 bg-success text-white" style="width: 800px;">
+        <div style="margin:120px">
+        <h2 class="mx-auto" >To Do List App</h2>
+        
+    
         <!-- input form!-->
-        <div class='input-form'>
+        
+        <div class='input-form py-auto'>
         <input type='text' ng-model='newTask'/>
         
-            <button class="btn btn-info" ng-click='addTask(newTask)'>Add</button>
+            <button class="btn btn-success" ng-click='addTask(newTask)'>Add</button>
             
         </div>
+        
         
         
         <!--ng-repeat will loop through the taskList -->
-        <div ng-repeat='task in taskList'>
+        <div style="padding:5px" ng-repeat='task in taskList'>
             
         <!-- An information of a task -->
-        <span>{{task.task}}</span>
+        <span style="width: 1000px">{{task.task}}</span>
             
         <!-- A checkbox displaying the progress -->
-        <button class="btn btn-danger" ng-click='deleteTask(newTask)'>Delete </button>   
-            
-        </div>
-
+        <button class="btn btn-danger" ng-click='deleteTask(task.id)'>Delete </button>   
+          </div>  
+        
+</div>
         <script src="angular.js"></script>
         <script src="app/app.js"></script>
         <script src="app/listController.js"></script>
